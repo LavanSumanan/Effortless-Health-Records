@@ -82,7 +82,7 @@ $('#subButton').on('click', function(e) {
 });
 
 $('#sign-out').on('click', function(e) {
-  window.location.href = "loginpage.html"
+  window.location.href = "index.html"
 });
 
 $('#start-record-btn').on('click', function(e) {
