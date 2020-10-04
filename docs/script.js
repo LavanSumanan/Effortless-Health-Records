@@ -77,8 +77,7 @@ recognition.onerror = function(event) {
       App buttons and input 
 ------------------------------*/
 $('#subButton').on('click', function(e) {
-  var input = document.getElementById("username").value;
-  document.getElementById("user").value=input;
+  window.location.href = "homepage.html"
 });
 
 $('#sign-out').on('click', function(e) {
