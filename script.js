@@ -115,12 +115,6 @@ notesList.on('click', function(e) {
   e.preventDefault();
   var target = $(e.target);
 
-  // Listen to the selected note.
-  if(target.hasClass('listen-note')) {
-    var content = target.closest('.note').find('.content').text();
-    readOutLoud(content);
-  }
-
   // Delete note.
   if(target.hasClass('delete-note')) {
     var dateTime = target.siblings('.date').text();  
@@ -148,7 +142,7 @@ function renderNotes(notes) {
     });
   }
   else {
-    html = '<li><p class="content">You don\'t have any notes yet.</p></li>';
+    html = '<li><p class="content">You don\'t have any prior patient information.</p></li>';
   }
   notesList.html(html);
 }

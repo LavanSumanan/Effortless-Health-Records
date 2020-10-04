@@ -1,3 +1,11 @@
+button {
+    background-color: navy;
+}
+
+a {
+    color: navy;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -7,19 +15,10 @@ p {
     color: #444;
 }
 
-
-nav p, a {
+nav p {
     color: white;
     font-size: 1.1rem;
     margin: 0 auto;
-}
-
-nav p:hover {
-    color: lightcoral;
-}
-
-em {
-    color: orangered
 }
 
 nav {
@@ -27,15 +26,19 @@ nav {
     padding: 10 10 10 10;
     max-width: 2000px;
     max-height: 200px;
-    background-color:#ff9575;
+    background-color: white;
     display: flex;
 }
 
-nav .left-form {
+br {
+    margin: auto 100;
+}
+
+.left-form {
     flex: 1;
 }
 
-nav .right-form {
+.right-form {
     flex: 1;
 }
 
@@ -51,6 +54,24 @@ button:focus {
     max-width: 700px;
     margin: 0 auto;
     padding: 100px 50px;
+    text-align: center;
+}
+
+.indented {
+    padding-left: 450;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.login {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 50px;
     text-align: center;
 }
 
@@ -72,7 +93,7 @@ button:focus {
 .no-browser-support {
     display: none;
     font-size: 1.2rem;
-    color: #e64427;
+    color: navy;
     margin-top: 35px;
 }
 
