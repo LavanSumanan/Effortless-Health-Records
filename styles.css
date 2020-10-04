@@ -14,10 +14,6 @@ nav p, a {
     margin: 0 auto;
 }
 
-nav p:hover {
-    background-color: orangered;
-}
-
 em {
     color: orangered
 }
