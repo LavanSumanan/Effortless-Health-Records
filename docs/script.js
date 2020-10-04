@@ -116,6 +116,7 @@ $('#save-note-btn').on('click', function(e) {
     saveNote(new Date().toLocaleString(), noteContent);
 
     noteContent = '';
+    dict["Name"]= "", dict["Age"]="", dict["Weight"]="", dict["Height"]="";
     renderNotes(getAllNotes());
     noteTextarea.val('');
     instructions.text('Patient information saved successfully.');
