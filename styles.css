@@ -7,6 +7,42 @@ p {
     color: #444;
 }
 
+
+nav p, a {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 auto;
+}
+
+nav p:hover {
+    background-color: orangered;
+}
+
+em {
+    color: orangered
+}
+
+nav {
+    text-align: center;
+    padding: 10 10 10 10;
+    max-width: 2000px;
+    max-height: 200px;
+    background-color:#ff9575;
+    display: flex;
+}
+
+nav .left-form {
+    flex: 1;
+}
+
+nav .right-form {
+    flex: 1;
+}
+
+.clearfix {
+    clear: both;
+}
+
 button:focus {
     outline: 0;
 }
@@ -70,23 +106,4 @@ button:focus {
 
 .note .content {
     margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 50px 25px;
-    }
-
-    button {
-        margin-bottom: 10px;
-    }
-
-}   
-
-
-
-/* -- Demo ads -- */
-
-@media (max-width: 1200px) {
-    #bsaHolder{ display:none;}
 }
