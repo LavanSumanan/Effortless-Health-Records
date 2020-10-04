@@ -8,26 +8,34 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <div class="container">
 
-            <form action="doctorform.html" method="POST">
+            <form action="homepage.html" method="POST">
                 <div class="imgcontainer">
                     <img src="minilogo.png" alt="Avatar" class="avatar" width="400" height="400">
+                    <p><strong>Effortless Health Records</strong></p>
                 </div>
 
                 <hr>
 
                 <div class="login">
-                    <!-- <label for="uname"><b>Username</b></label> -->
-                    <input type="text" placeholder="Username" name="uname" required></br>
+                    <input id="username" autocomplete="off" type="text" placeholder="Username" name="uname" required></br>
 
-                    <!-- <label for="psw"><b>Password</b></label> -->
-                    <input type="password" placeholder="Password" name="psw" required></br>
+                    <input autocomplete="off" type="password" placeholder="Password" name="psw" required></br>
+
+                    <input autocomplete="off" list="profession" name="prof" placeholder="Profession" required style="margin-bottom: 20px;">
+                        <datalist id="profession">
+                            <option value="Physician">
+                            <option value="Pharmacist">
+                            <option value="Receptionist">
+                            <option value="Nurse">
+                        </datalist></br>
         
-                    <button type="submit">Login</button>
+                    <button id="subButton" type="submit">Login</button>
                 </div>
                 Forgot <a href="hah.html">password?</a>
 

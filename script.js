@@ -19,7 +19,12 @@ var noteContent = '';
 var notes = getAllNotes();
 renderNotes(notes);
 
-
+var dict = {
+  Name: "",
+  Age: "",
+  Weight: "",
+  Height: ""
+};
 
 /*-----------------------------
       Voice Recognition 
@@ -28,7 +33,7 @@ renderNotes(notes);
 // If false, the recording will stop after a few seconds of silence.
 // When true, the silence period is longer (about 15 seconds),
 // allowing us to keep recording even when the user pauses. 
-recognition.continuous = false;
+recognition.continuous = true;
 
 // This block is called every time the Speech APi captures a line. 
 recognition.onresult = function(event) {
@@ -71,6 +76,14 @@ recognition.onerror = function(event) {
 /*-----------------------------
       App buttons and input 
 ------------------------------*/
+$('#subButton').on('click', function(e) {
+  var input = document.getElementById("username").value;
+  document.getElementById("user").value=input;
+});
+
+$('#sign-out').on('click', function(e) {
+  window.location.href = "loginpage.html"
+});
 
 $('#start-record-btn').on('click', function(e) {
   if (noteContent.length) {
@@ -97,6 +110,32 @@ $('#save-note-btn').on('click', function(e) {
     instructions.text('Could not save empty note. Please add a message to your note.');
   }
   else {
+    if (noteContent.indexOf("name is") != -1) {
+      if(noteContent.indexOf(" ", noteContent.indexOf(" ", noteContent.indexOf("name is")+8)+1)!=-1)
+        dict["Name"]=noteContent.substring(noteContent.indexOf("name is")+8, noteContent.indexOf(" ", noteContent.indexOf(" ", noteContent.indexOf("name is")+8)+1));
+      else
+        dict["Name"]=noteContent.substring(noteContent.indexOf("name is")+8);
+    }
+    if (noteContent.toLowerCase().indexOf("age is") != -1) {
+      if(noteContent.indexOf(" ", noteContent.indexOf("age is")+7)!=-1)
+        dict["Age"]=noteContent.substring(noteContent.indexOf("age is")+7, noteContent.indexOf(" ", noteContent.indexOf("age is")+7));
+      else
+        dict["Age"]=noteContent.substring(noteContent.indexOf("age is")+7);
+    }
+    if (noteContent.toLowerCase().indexOf("weight is") != -1) {
+      if(noteContent.indexOf(" ", noteContent.indexOf("weight is")+10)!=-1)
+        dict["Weight"]=noteContent.substring(noteContent.indexOf("weight is")+10, noteContent.indexOf(" ", noteContent.indexOf("weight is")+10));
+      else
+        dict["Weight"]=noteContent.substring(noteContent.indexOf("weight is")+10);
+    }
+    if (noteContent.toLowerCase().indexOf("height is") != -1) {
+      if(noteContent.indexOf(" ", noteContent.indexOf("height is")+10)!=-1)
+        dict["Height"]=noteContent.substring(noteContent.indexOf("height is")+10, noteContent.indexOf(" ", noteContent.indexOf("height is")+10));
+      else
+        dict["Height"]=noteContent.substring(noteContent.indexOf("height is")+10);
+    }
+
+    noteContent = "Name: " + dict["Name"] + " \| Age: " + dict["Age"] + " \| Weight (lb): " + dict["Weight"] + " \| Height (cm): " + dict["Height"];
     // Save note to localStorage.
     // The key is the dateTime with seconds, the value is the content of the note.
     saveNote(new Date().toLocaleString(), noteContent);
@@ -105,7 +144,7 @@ $('#save-note-btn').on('click', function(e) {
     noteContent = '';
     renderNotes(getAllNotes());
     noteTextarea.val('');
-    instructions.text('Note saved successfully.');
+    instructions.text('Patient information saved successfully.');
   }
       
 })
@@ -134,7 +173,6 @@ function renderNotes(notes) {
       html+= `<li class="note">
         <p class="header">
           <span class="date">${note.date}</span>
-          <a href="#" class="listen-note" title="Listen to Note">Listen to Note</a>
           <a href="#" class="delete-note" title="Delete">Delete</a>
         </p>
         <p class="content">${note.content}</p>
@@ -173,4 +211,3 @@ function getAllNotes() {
 function deleteNote(dateTime) {
   localStorage.removeItem('note-' + dateTime); 
 }
-

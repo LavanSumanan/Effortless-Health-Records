@@ -1,9 +1,17 @@
+* {
+    font-family: 'Oxygen', sans-serif !important;
+}
+
+strong {
+    color: navy;
+}
+
 button {
     background-color: navy;
 }
 
 a {
-    color: navy;
+    color:#1e7ecd !important;
 }
 
 ul {
@@ -15,19 +23,20 @@ p {
     color: #444;
 }
 
+nav {
+    text-align: center;
+    background-color: navy;
+    display: flex;
+}
+
 nav p {
     color: white;
     font-size: 1.1rem;
     margin: 0 auto;
 }
 
-nav {
-    text-align: center;
-    padding: 10 10 10 10;
-    max-width: 2000px;
-    max-height: 200px;
-    background-color: white;
-    display: flex;
+nav p:hover {
+    background-color: #1e7ecd;
 }
 
 br {
@@ -57,6 +66,12 @@ button:focus {
     text-align: center;
 }
 
+.sign-out-container {
+    position:fixed;
+    left:10px;
+    bottom:10px;
+}
+
 .indented {
     padding-left: 450;
 }
@@ -65,7 +80,6 @@ button:focus {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
   }
 
 .login {
@@ -84,12 +98,6 @@ button:focus {
     margin: 0 auto;
 }
 
-.tz-link {
-    font-size: 1em;
-    color: #1da7da;
-    text-decoration: none;
-}
-
 .no-browser-support {
     display: none;
     font-size: 1.2rem;
@@ -106,7 +114,7 @@ button:focus {
 }
 
 #recording-instructions {
-    margin: 15px auto 60px;
+    margin: 15px auto 15px;
 }
 
 #notes {
@@ -119,8 +127,7 @@ button:focus {
     margin-bottom: 10px;
 }
 
-.note .delete-note,
-.note .listen-note {
+.note .delete-note {
     text-decoration: none;
     margin-left: 15px;
 }
