@@ -11,27 +11,32 @@
 
     </head>
     <body>
+        <nav>
+            <a href="doctorform.html"><p class="left-form">Doctor's Form</p></a>
+            <a href="doctorform.html"><p class="right-form">Pharmacist's Form</p></a>
+        </nav>
+        
         <div class="container">
 
             <h1><em>E</em>ffortless <em>H</em>ealth <em>R</em>ecords</h1>
             <p class="page-description">Patient information for Doctors</p>
 
-            <h2 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h2>
+            <h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
 
             <div class="app"> 
-                <h2>Add New Note</h2>
-                <div class="input-single">
-                    <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
-                </div>         
+                <h3>Record Patient Information</h3>
                 <button id="start-record-btn" title="Start Recording">Start Recognition</button>
                 <button id="pause-record-btn" title="Pause Recording">Pause Recognition</button>
-                <button id="save-note-btn" title="Save Note">Save Note</button>   
                 <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
+                <div class="input-single">
+                    <textarea id="note-textarea" placeholder="Patient Information" rows="6"></textarea>
+                </div>
+                <button id="save-note-btn" title="Save Note">Save Information</button>
                 
-                <h2>My Notes</h2>
+                <h3>My Patients</h3>
                 <ul id="notes">
                     <li>
-                        <p class="no-notes">You don't have any notes.</p>
+                        <p class="no-notes">You don't have any prior patient information.</p>
                     </li>
                 </ul>
 
